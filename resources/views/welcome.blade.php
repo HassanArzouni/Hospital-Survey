@@ -5,27 +5,45 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Hospital Survey</title>
 
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
         <link href="{{ asset('css/home.css') }}" rel="stylesheet" type="text/css">
         <link href="{{ asset('css/bs/bootstrap.min.css') }}" rel="stylesheet">
     </head>
+
     <body>
-        <div class="flex-center position-ref">
-            <div class="content">
-                <div class="title m-b-md">
-                    Oesophageal cancer
-                </div>
-                <div class="title m-b-md">
-                    Registration form new diagnosis
+        <div class="container-fluid">
+            <div class="row">
+                <div class="mx-auto">
+                    <h2 class="text-center">Oesophageal cancer</h2>
                 </div>
             </div>
-           
+            <div class="row">
+                <div class="mx-auto">
+                    <h3 class="text-center">Registration form new diagnosis</h3>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="mx-auto">
+                    <h4 class="text-center">The variables with * in superscript are required.</h4>
+                    <h4 class="text-center">The variables with a   <input type="radio" checked> are single-select variables; only one answer can be selected.</h4>
+                    <h4 class="text-center">The variables with a   <input type="checkbox" checked> are multi-select variables; multiple answers can be selected.</h4>
+                </div>
+            </div>
         </div>
+
         <form>
-            <div class="form-content">
-                Hospital: <input type="text" name="hospital">
+            <div class="container-fluid">
+                <div class="form-group row">
+                    <div class="col-md-1 mx-auto text-center">
+                        <label class="col-form-label">Hospital*</label>
+                    </div>
+                    <div class="col-md-11">
+                        <input class="form-control" placeholder="Hospital">
+                    </div>
+                </div>
             </div>
         </form>
 
