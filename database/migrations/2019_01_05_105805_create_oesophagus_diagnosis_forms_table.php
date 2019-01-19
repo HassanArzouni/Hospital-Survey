@@ -46,8 +46,17 @@ class CreateOesophagusDiagnosisFormsTable extends Migration
             $table->unsignedInteger('chemo_radio_therapy_oesophaguse_id');
             $table->foreign('chemo_radio_therapy_oesophaguse_id')->references('id')->on('chemo_radio_therapy_oesophaguses');
 
+            $table->unsignedInteger('surgery_therapy_oesophaguses_id');
+            $table->foreign('surgery_therapy_oesophaguses_id')->references('id')->on('surgery_therapy_oesophaguses');
 
+            $table->unsignedInteger('pathology_therapy_oesophaguses_id');
+            $table->foreign('pathology_therapy_oesophaguses_id')->references('id')->on('pathology_therapy_oesophaguses');
 
+            $table->unsignedInteger('reevaluation_oesophaguses_id');
+            $table->foreign('reevaluation_oesophaguses_id')->references('id')->on('reevaluation_oesophaguses');
+
+            $table->unsignedInteger('adjuvant_oesophaguses_id');
+            $table->foreign('adjuvant_oesophaguses_id')->references('id')->on('adjuvant_oesophaguses');
 
             $table->timestamps();
         });
@@ -71,6 +80,10 @@ class CreateOesophagusDiagnosisFormsTable extends Migration
             $table->dropForeign(['treatment_plan_oesophaguse_id']);
             $table->dropForeign(['endoscopic_resection_therapy_oesophaguse_id']);
             $table->dropForeign(['chemo_radio_therapy_oesophaguse_id']);
+            $table->dropForeign(['surgery_therapy_oesophaguses_id']);
+            $table->dropForeign(['pathology_therapy_oesophaguses_id']);
+            $table->dropForeign(['reevaluation_oesophaguses_id']);
+            $table->dropForeign(['adjuvant_oesophaguses_id']);
         });
 
         Schema::dropIfExists('oesophagus_diagnosis_forms');

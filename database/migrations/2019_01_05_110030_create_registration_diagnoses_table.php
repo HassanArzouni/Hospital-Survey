@@ -15,6 +15,16 @@ class CreateRegistrationDiagnosesTable extends Migration
     {
         Schema::create('registration_diagnoses', function (Blueprint $table) {
             $table->increments('id');
+
+            $table->unsignedInteger('administrative_patient_datas_id');
+            $table->foreign('administrative_patient_datas_id')->references('id')->on('administrative_patient_datas');
+
+            $table->unsignedInteger('cancer_diagnosis_forms_id');
+            $table->foreign('cancer_diagnosis_forms_id')->references('id')->on('cancer_diagnosis_forms');
+
+            $table->unsignedInteger('oesophagus_diagnosis_forms_id');
+            $table->foreign('oesophagus_diagnosis_forms_id')->references('id')->on('oesophagus_diagnosis_forms');
+
             $table->timestamps();
         });
     }
@@ -26,6 +36,12 @@ class CreateRegistrationDiagnosesTable extends Migration
      */
     public function down()
     {
+        Schema::table('registration_diagnoses', function (Blueprint $table) {
+            $table->dropForeign(['administrative_patient_datas_id']);
+            $table->dropForeign(['cancer_diagnosis_forms_id']);
+            $table->dropForeign(['oesophagus_diagnosis_forms_id']);
+        });
+
         Schema::dropIfExists('registration_diagnoses');
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAdjuvantOesophagusesTable extends Migration
+class CreateOesophagealRegistrationFollowUpsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,14 @@ class CreateAdjuvantOesophagusesTable extends Migration
      */
     public function up()
     {
-        Schema::create('adjuvant_oesophaguses', function (Blueprint $table) {
+        Schema::create('oesophageal_registration_follow_ups', function (Blueprint $table) {
             $table->increments('id');
 
-            $table->boolean('has_adjuvant_therapy');
-            $table->date('adjuvant_therapy_date');
-            $table->json('adjuvant_therapy_type');
-            $table->json('adjuvant_therapy_complication');
+            $table->boolean('recurrence');
+            $table->date('recurrence_date');
+            $table->json('recurrence_type');
+            $table->json('health_status');
+            $table->json('death_cause');
 
             $table->timestamps();
         });
@@ -32,6 +33,6 @@ class CreateAdjuvantOesophagusesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('adjuvant_oesophaguses');
+        Schema::dropIfExists('oesophageal_registration_follow_ups');
     }
 }

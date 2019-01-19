@@ -15,6 +15,11 @@ class CreateReevaluationOesophagusesTable extends Migration
     {
         Schema::create('reevaluation_oesophaguses', function (Blueprint $table) {
             $table->increments('id');
+
+            $table->boolean('reevaluation_moc_performed');
+            $table->date('reevaluation_moc_date');
+            $table->json('further_therapy');
+
             $table->timestamps();
         });
     }
