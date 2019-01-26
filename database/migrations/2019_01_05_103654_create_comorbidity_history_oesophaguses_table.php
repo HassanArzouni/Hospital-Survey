@@ -22,7 +22,7 @@ class CreateComorbidityHistoryOesophagusesTable extends Migration
             $table->float('height', 5, 2);
 
             $table->json('charlson_comorbidity_index');
-            $table->json('previous_surgery ');
+            $table->json('previous_surgery');
 
             $table->timestamps();
         });

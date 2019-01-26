@@ -17,13 +17,13 @@ class CreateRegistrationDiagnosesTable extends Migration
             $table->increments('id');
 
             $table->unsignedInteger('administrative_patient_datas_id');
-            $table->foreign('administrative_patient_datas_id')->references('id')->on('administrative_patient_datas');
+            $table->foreign('administrative_patient_datas_id', 'apd_id_foreign')->references('id')->on('administrative_patient_datas');
 
             $table->unsignedInteger('cancer_diagnosis_forms_id');
-            $table->foreign('cancer_diagnosis_forms_id')->references('id')->on('cancer_diagnosis_forms');
+            $table->foreign('cancer_diagnosis_forms_id', 'cdf_id_foreign')->references('id')->on('cancer_diagnosis_forms');
 
             $table->unsignedInteger('oesophagus_diagnosis_forms_id');
-            $table->foreign('oesophagus_diagnosis_forms_id')->references('id')->on('oesophagus_diagnosis_forms');
+            $table->foreign('oesophagus_diagnosis_forms_id', 'odf_id_foreign')->references('id')->on('oesophagus_diagnosis_forms');
 
             $table->timestamps();
         });

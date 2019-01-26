@@ -17,10 +17,10 @@ class CreateSurveysTable extends Migration
             $table->increments('id');
 
             $table->unsignedInteger('registration_diagnoses_id');
-            $table->foreign('registration_diagnoses_id')->references('id')->on('registration_diagnoses');
+            $table->foreign('registration_diagnoses_id', 'rd_id_foreign')->references('id')->on('registration_diagnoses');
 
             $table->unsignedInteger('oesophageal_registration_follow_ups_id');
-            $table->foreign('oesophageal_registration_follow_ups_id')->references('id')->on('oesophageal_registration_follow_ups');
+            $table->foreign('oesophageal_registration_follow_ups_id', 'orf_id_foreign')->references('id')->on('oesophageal_registration_follow_ups');
 
             $table->timestamps();
         });

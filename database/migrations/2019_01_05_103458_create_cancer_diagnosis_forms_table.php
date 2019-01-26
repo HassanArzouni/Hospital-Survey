@@ -37,7 +37,7 @@ class CreateCancerDiagnosisFormsTable extends Migration
                 'Completely dependent for care, bedridden'
             ]);
 
-            $this->string('primitive_tumor_location');
+            $table->string('primitive_tumor_location');
 
             $table->enum('lateral_even_organs_only', [
                 'Left',
@@ -45,7 +45,7 @@ class CreateCancerDiagnosisFormsTable extends Migration
                 'Unknown'
             ]);
 
-            $this->string('histological_diagnosis');
+            $table->string('histological_diagnosis');
 
             $table->enum('degree_of_differentiation', [
                 'Great',
@@ -55,17 +55,17 @@ class CreateCancerDiagnosisFormsTable extends Migration
                 'Unknown'
             ]);
 
-            $this->string('tnm_clinic_ct');
-            $this->string('tnm_clinic_cn');
-            $this->string('tnm_clinic_cm');
+            $table->string('tnm_clinic_ct');
+            $table->string('tnm_clinic_cn');
+            $table->string('tnm_clinic_cm');
 
-            $this->string('tnm_pathological_pt');
-            $this->string('tnm_pathological_pn');
-            $this->string('tnm_pathological_pm');
+            $table->string('tnm_pathological_pt');
+            $table->string('tnm_pathological_pn');
+            $table->string('tnm_pathological_pm');
 
-            $this->string('other_clinical_stages');
+            $table->string('other_clinical_stages');
 
-            $this->date('date_of_first_treatment');
+            $table->date('date_of_first_treatment');
 
             $table->json('treatments_already_received');
             $table->json('subsequent_treatment_plan');
